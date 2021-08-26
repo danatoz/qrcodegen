@@ -15,3 +15,10 @@ C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj
 C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.dll
 C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.pdb
 C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.genruntimeconfig.cache
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\DocumentFormat.OpenXml.dll
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\NPOI.OOXML.dll
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\NPOI.OpenXml4Net.dll
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\NPOI.OpenXmlFormats.dll
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\NPOI.dll
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\ICSharpCode.SharpZipLib.dll

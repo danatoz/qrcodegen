@@ -29,6 +29,7 @@ namespace qrcodegen
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.btnCreateQR = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbInputField = new System.Windows.Forms.TextBox();
@@ -37,6 +38,11 @@ namespace qrcodegen
             this.tbWay = new System.Windows.Forms.TextBox();
             this.btnPreview = new System.Windows.Forms.Button();
             this.btnPath = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.btnImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbQRCodePic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +54,7 @@ namespace qrcodegen
             this.btnCreateQR.TabIndex = 0;
             this.btnCreateQR.Text = "Создать QR Code";
             this.btnCreateQR.UseVisualStyleBackColor = true;
+            this.btnCreateQR.Click += new System.EventHandler(this.btnCreateQR_Click);
             // 
             // label1
             // 
@@ -81,6 +88,7 @@ namespace qrcodegen
             this.btnSaveQR.TabIndex = 0;
             this.btnSaveQR.Text = "Сохранить QR Code";
             this.btnSaveQR.UseVisualStyleBackColor = true;
+            this.btnSaveQR.Click += new System.EventHandler(this.btnSaveQR_Click);
             // 
             // tbWay
             // 
@@ -97,6 +105,7 @@ namespace qrcodegen
             this.btnPreview.TabIndex = 0;
             this.btnPreview.Text = "Предпросмотор";
             this.btnPreview.UseVisualStyleBackColor = true;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // btnPath
             // 
@@ -106,17 +115,58 @@ namespace qrcodegen
             this.btnPath.TabIndex = 0;
             this.btnPath.Text = "...";
             this.btnPath.UseVisualStyleBackColor = true;
+            this.btnPath.Click += new System.EventHandler(this.btnPath_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Location = new System.Drawing.Point(12, 393);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(215, 23);
+            this.btnExcel.TabIndex = 0;
+            this.btnExcel.Text = "Excel";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // btnImage
+            // 
+            this.btnImage.Location = new System.Drawing.Point(12, 432);
+            this.btnImage.Name = "btnImage";
+            this.btnImage.Size = new System.Drawing.Size(215, 23);
+            this.btnImage.TabIndex = 0;
+            this.btnImage.Text = "Image";
+            this.btnImage.UseVisualStyleBackColor = true;
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 399);
+            this.ClientSize = new System.Drawing.Size(240, 699);
             this.Controls.Add(this.pbQRCodePic);
             this.Controls.Add(this.tbWay);
             this.Controls.Add(this.tbInputField);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPath);
+            this.Controls.Add(this.btnImage);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.btnSaveQR);
             this.Controls.Add(this.btnCreateQR);
@@ -138,6 +188,11 @@ namespace qrcodegen
         private System.Windows.Forms.TextBox tbWay;
         private System.Windows.Forms.Button btnPreview;
         private System.Windows.Forms.Button btnPath;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Button btnImage;
     }
 }
 
