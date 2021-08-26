@@ -1,0 +1,17 @@
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\qrcodegen.exe
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\qrcodegen.deps.json
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\qrcodegen.runtimeconfig.json
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\qrcodegen.runtimeconfig.dev.json
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\qrcodegen.dll
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\qrcodegen.pdb
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\bin\Debug\netcoreapp3.1\MessagingToolkit.QRCode.dll
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.csproj.AssemblyReference.cache
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.MainWindow.resources
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.csproj.GenerateResource.cache
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.AssemblyInfoInputs.cache
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.AssemblyInfo.cs
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.csproj.CoreCompileInputs.cache
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.csproj.CopyComplete
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.dll
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.pdb
+C:\Users\Dante\Documents\WorkspaceVSCode\qrcodegenerator\qrcodegen\qrcodegen\obj\Debug\netcoreapp3.1\qrcodegen.genruntimeconfig.cache

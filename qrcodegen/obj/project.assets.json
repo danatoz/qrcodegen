@@ -1,11 +1,36 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "MessagingToolkit.QRCode/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/MessagingToolkit.QRCode.dll": {}
+        },
+        "runtime": {
+          "lib/MessagingToolkit.QRCode.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MessagingToolkit.QRCode/1.3.0": {
+      "sha512": "zgZUG9b99kyYvplxVbtN+wNkwB+7RoJJFImDZ/InT6tEKKKkMa3k1NOSKMbWlbWgwti20qCK/UxMcTV1svQ5wQ==",
+      "type": "package",
+      "path": "messagingtoolkit.qrcode/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MessagingToolkit.QRCode.dll",
+        "messagingtoolkit.qrcode.1.3.0.nupkg.sha512",
+        "messagingtoolkit.qrcode.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "MessagingToolkit.QRCode >= 1.3.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Dante\\.nuget\\packages\\": {},
@@ -49,6 +74,12 @@
     "frameworks": {
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "MessagingToolkit.QRCode": {
+            "target": "Package",
+            "version": "[1.3.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -70,5 +101,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"MessagingToolkit.QRCode 1.3.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETCoreApp,Version=v3.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "MessagingToolkit.QRCode",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }
