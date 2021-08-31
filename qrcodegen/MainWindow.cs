@@ -69,16 +69,17 @@ namespace qrcodegen
         }
         public void Print()
         {
-            var count = 0;
-            var jpg = new Bitmap(256, 256);
+            int count = 0;
+            int width = 256, height = 256;
+            var jpg = new Bitmap(width, height);
             using (var g = Graphics.FromImage(jpg))
             {
                 foreach (var bitmap in Bitmaps)
                 {
                     count++;
-                    var height = bitmap.Height;
-                    var width = bitmap.Width;
-                    g.DrawImage(bitmap, height + 5, width + 5);
+                    height = bitmap.Height;
+                    width = bitmap.Width;
+                    g.DrawImage(bitmap, 0, 0);
                     jpg.Save($"{count}.bmp");
                 }
             }

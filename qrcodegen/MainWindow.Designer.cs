@@ -99,6 +99,7 @@ namespace qrcodegen
             // 
             // btnPreview
             // 
+            this.btnPreview.Enabled = false;
             this.btnPreview.Location = new System.Drawing.Point(12, 364);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(215, 23);
@@ -159,7 +160,7 @@ namespace qrcodegen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 699);
+            this.ClientSize = new System.Drawing.Size(240, 468);
             this.Controls.Add(this.pbQRCodePic);
             this.Controls.Add(this.tbWay);
             this.Controls.Add(this.tbInputField);
