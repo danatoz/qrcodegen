@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using MessagingToolkit.QRCode.Codec;
 using MessagingToolkit.QRCode;
 using System.Drawing.Printing;
 using System.IO;
+using System.Net.Http.Headers;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 
@@ -28,39 +30,72 @@ namespace qrcodegen
         public MainWindow()
         {
             InitializeComponent();
-            tbWay.Text = @"C:\Users\Dante\Desktop\Stack.xlsx";
-            Path = @"C:\Users\Dante\Desktop\Stack.xlsx";
+            tbWay.Text = @"C:\Users\%USERPROFILE%\Desktop\Stack.xlsx";
+            Path = tbWay.Text;
         }
 
         private void btnCreateQR_Click(object sender, EventArgs e)
         {
-            string qrtext = tbInputField.Text;
-            QRCodeEncoder encoder = new QRCodeEncoder();
-            Bitmap qrcode = encoder.Encode(qrtext);
-            pbQRCodePic.Image = qrcode as Image;
+            try
+            {
+                string qrtext = tbInputField.Text;
+                QRCodeEncoder encoder = new QRCodeEncoder();
+                Bitmap qrcode = encoder.Encode(qrtext);
+                pbQRCodePic.Image = qrcode as Image;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void btnSaveQR_Click(object sender, EventArgs e)
         {
-            SaveFileDialog save = new SaveFileDialog();
-            save.Filter = "PNG|*.png|JPEG|*.jpg|GIF|*.gif|BMP|*.bmp";
-            if (save.ShowDialog() == DialogResult.OK)
+            try
             {
-                pbQRCodePic.Image.Save(save.FileName);
+                if (tbInputField.Text == null)
+                {
+                    MessageBox.Show("Создайте QR код");
+                    return;
+                }
+                if (pbQRCodePic.Image == null)
+                {
+                    MessageBox.Show("Введите текст");
+                    return;
+                }
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "PNG|*.png|JPEG|*.jpg|GIF|*.gif|BMP|*.bmp";
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    pbQRCodePic.Image.Save(save.FileName);
+                }
             }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
         }
 
         private void btnPath_Click(object sender, EventArgs e)
         {
-            FileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "XLSX|*.xlsx|XLS|*.xls";
-            if (fileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                string path = fileDialog.FileName;
-                Path = path;
-                tbWay.Text = path;
-                MessageBox.Show("It's ok");
+                FileDialog fileDialog = new OpenFileDialog();
+                fileDialog.Filter = "XLSX|*.xlsx|XLS|*.xls";
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string path = fileDialog.FileName;
+                    Path = path;
+                    tbWay.Text = path;
+                    //MessageBox.Show("It's ok");
+                }
             }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
@@ -69,20 +104,28 @@ namespace qrcodegen
         }
         public void Print()
         {
-            int count = 0;
-            int width = 256, height = 256;
-            var jpg = new Bitmap(width, height);
-            using (var g = Graphics.FromImage(jpg))
+            try
             {
-                foreach (var bitmap in Bitmaps)
+                int count = 0;
+                int width = 256, height = 256;
+                var jpg = new Bitmap(width, height);
+                using (var g = Graphics.FromImage(jpg))
                 {
-                    count++;
-                    height = bitmap.Height;
-                    width = bitmap.Width;
-                    g.DrawImage(bitmap, 0, 0);
-                    jpg.Save($"{count}.bmp");
+                    foreach (var bitmap in Bitmaps)
+                    {
+                        count++;
+                        height = bitmap.Height;
+                        width = bitmap.Width;
+                        g.DrawImage(bitmap, 0, 0);
+                        jpg.Save($"{count}.bmp");
+                    }
                 }
             }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
         }
 
 
@@ -101,8 +144,23 @@ namespace qrcodegen
             ReadExcelFile();
             WriteFile();
             GroupGenerate();
+            Print();
+            Cleaner();
         }
 
+        void Cleaner()
+        {
+            try
+            {
+                ThStrings.Clear();
+                Bitmaps.Clear();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
+        }
         static void ReadExcelFile()
         {
             try
@@ -164,13 +222,13 @@ namespace qrcodegen
                         }
                         excelResult.Append("");
                         //Console.WriteLine(excelResult.ToString());
-                        MessageBox.Show(excelResult.ToString());
+                        //MessageBox.Show(excelResult.ToString());
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-
+                MessageBox.Show(exception.Message);
             }
 
 
@@ -178,31 +236,42 @@ namespace qrcodegen
 
         void WriteFile()
         {
-            var sw = new StreamWriter("test.txt");
-            foreach (var result in ThStrings)
+            try
             {
-                sw.WriteLine(result);
+                var sw = new StreamWriter("test.txt");
+                foreach (var result in ThStrings)
+                {
+                    sw.WriteLine(result);
+                }
+                sw.Close();
             }
-            sw.Close();
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
         }
 
         void GroupGenerate()
         {
-            QRCodeEncoder encoder = new QRCodeEncoder();
-            foreach (var result in ThStrings)
+            try
             {
-                Bitmaps.Add(encoder.Encode(result));
+                QRCodeEncoder encoder = new QRCodeEncoder();
+                foreach (var result in ThStrings)
+                {
+                    Bitmaps.Add(encoder.Encode(result));
+                }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
         }
         private void btnPreview_Click(object sender, EventArgs e)
         {
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
-        }
-
-        private void btnImage_Click(object sender, EventArgs e)
-        {
-            Print();
         }
     }
 }
